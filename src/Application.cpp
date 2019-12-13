@@ -50,11 +50,9 @@ void Application::init( void )
 	mesh = new Mesh();
 	mesh->createPlane( 10 );
 
-	// EXERCISE PRACT 1
-	//mesh->createCube( 10 );
-	// EXERCISE PRACT 1
+	
 
-	// EXERCISE PRACT 2 +++++++++++++++++++****************************
+	
 	aseFiles.push_back( std::unique_ptr<Mesh>( new Mesh( "Box2.ASE", 0.1f ) ) );
 	aseFiles.push_back( std::unique_ptr<Mesh>( new Mesh( "teapot.ASE", 0.1f ) ) );
 	aseFiles.push_back( std::unique_ptr<Mesh>( new Mesh( "Girl.ASE", 10.f ) ) );
@@ -71,9 +69,7 @@ void Application::init( void )
 	
 
 	aseIndex = 0;
-	// EXERCISE PRACT 2
-
-	// EXERCISE PRACT 3
+	
 	shaderId = 1;
 
 	shader1.load( "Vertex_2.glsl", "Fragment_2.glsl" );//**********************************
@@ -83,7 +79,7 @@ void Application::init( void )
 	shader5.load("Vertex_5.glsl", "Fragment_5.glsl");
 	shader6.load("Vertex_6.glsl", "Fragment_6.glsl");
 	shader7.load("Vertex_8.glsl", "Fragment_8.glsl");
-// EXERCISE PRACT 3
+
 
 	poligonMode = PoligonMode::FILL;
 
@@ -111,7 +107,7 @@ void Application::render( void )
 	//Draw out world
 	//drawGrid( 500 ); //background grid
 
-	// EXERCISE PRACT 3
+	
 	glEnable( GL_BLEND ); // Enable alpha channel
 	glBlendFunc( GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA );
 
@@ -146,7 +142,7 @@ void Application::render( void )
 	
 	
 	
-	/////////////////////////////////esta
+	
 	
 	transform2.setRotation(speed_car*time, Vector3(0, 1, 0));
 	transform3.setTranslation(20 * cos(speed_car*time), 0, 20 * sin(speed_car*time));
@@ -155,7 +151,7 @@ void Application::render( void )
 	transform2.setRotation((speed_car*time)+3.14, Vector3(0, 1, 0));
 	transform3.setTranslation(-10 * cos(speed_car*time), 0, -10 * sin(speed_car*time));
 	transform_coche2 = transform2 * transform3;
-	///AQUI MAS MESEHES///////////////////////////////////////////////////////////
+	
 	
 	mesh->render(GL_TRIANGLES);
 	if (flag == 1) {
@@ -190,7 +186,7 @@ void Application::render( void )
 		
 		//aseFiles[aseIndex]->render(static_cast<std::underlying_type<PoligonMode>::type>(poligonMode));
 
-	// EXERCISE PRACT 3
+	
 	
 	//swap between front buffer and back buffer
 	SDL_GL_SwapWindow( this->window );
@@ -198,7 +194,7 @@ void Application::render( void )
 
 void Application::renderShader1(const int aseIndex, const Matrix44& transform)
 {
-	// EXERCISE PRACT 3 - Code example for the students
+	
 	shader1.enable();
 
 	int position = shader1.getAttribLocation("Position");
@@ -218,12 +214,12 @@ void Application::renderShader1(const int aseIndex, const Matrix44& transform)
 
 	aseFiles[aseIndex]->render(static_cast<std::underlying_type<PoligonMode>::type>(poligonMode));
 	shader1.disable();
-	// EXERCISE PRACT 3 - Code example for the students
+	
 }
 
 void Application::renderShader2( const int aseIndex, const Matrix44& transform )
 {
-	// EXERCISE PRACT 3 - Code example for the students
+	
 	shader2.enable();
 
 	int position = shader2.getAttribLocation( "Position" );
@@ -250,13 +246,13 @@ void Application::renderShader2( const int aseIndex, const Matrix44& transform )
 
 	shader2.disable();
 
-	// EXERCISE PRACT 3 - Code example for the students
+	
 }
 
 void Application::renderShader3(const int aseIndex, const Matrix44& transform)
 {
 
-	// EXERCISE PRACT 3
+	
 	shader3.enable();
 
 	int position = shader3.getAttribLocation("Position");
@@ -284,12 +280,12 @@ void Application::renderShader3(const int aseIndex, const Matrix44& transform)
 	aseFiles[aseIndex]->render(static_cast<std::underlying_type<PoligonMode>::type>(poligonMode));
 
 	shader3.disable();
-	// EXERCISE PRACT 3
+	
 }
 
 void Application::renderShader4(const int aseIndex, const Matrix44& transform)
 {
-	// EXERCISE PRACT 4
+	
 	shader4.enable();
 
 	int position = shader4.getAttribLocation("Position");
@@ -546,7 +542,7 @@ void Application::renderShader7(const int aseIndex, const Matrix44& transform)
 
 void Application::update( float seconds_elapsed )
 {
-	// EXERCISE PRACT 1
+	
 	float speed = seconds_elapsed * 10; //the speed is defined by the seconds_elapsed so it goes constant
 
 	int x, y;
