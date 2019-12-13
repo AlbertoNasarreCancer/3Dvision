@@ -645,11 +645,11 @@ void Application::onMouseButton( SDL_MouseButtonEvent event )
 
 void Application::setWindowSize( int width, int height )
 {
-	// EXERCISE PRACT 1
+	
 	glViewport( 0, 0, width, height );
 	window_width = width;
 	window_height = height;
 	camera->aspect = width / (float)height;
-	// EXERCISE PRACT 1
+	
 }
 
