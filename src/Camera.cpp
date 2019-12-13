@@ -50,7 +50,7 @@ void Camera::updateProjectionMatrix()
 
 Vector3 Camera::getLocalVector( const Vector3& v )
 {
-	// EXERCISE PRACT 1
+	
 
 	Matrix44 iView = view_matrix;
 	iView.inverse();
@@ -59,29 +59,29 @@ Vector3 Camera::getLocalVector( const Vector3& v )
 
 void Camera::move( Vector3 delta )
 {
-	// EXERCISE PRACT 1
+	
 	Vector3 local_vector = getLocalVector(delta); //obtenemos cordenadas de camara 
 
-	center = center + local_vector; //movemos el center en la direcci髇 en la que se mueve el rat髇.
-	eye = eye + local_vector; //movemos el eye en la direcci髇 en la que se mueve el rat髇.
+	center = center + local_vector; //movemos el center en la direcci贸n en la que se mueve el rat贸n.
+	eye = eye + local_vector; //movemos el eye en la direcci贸n en la que se mueve el rat贸n.
 	
 	updateViewMatrix(); // actualizamos la matriz con las nuevas posiciones
 }
 
 void Camera::rotate( float angle, const Vector3& axis )
 {
-	// EXERCISE PRACT 1
+	
 
 	Matrix44 R;
-	R.setRotation(angle, getLocalVector(axis));//obtenemos cordenadas de camara y rotamos la matriz con el angulo marcado por el rat髇
+	R.setRotation(angle, getLocalVector(axis));//obtenemos cordenadas de camara y rotamos la matriz con el angulo marcado por el rat贸n
 
 	Vector3 front = (center - eye);    //calculamos el nuevo vector front
-	Vector3 new_front = R * front; //calculamos el nuevo vector front aplicandole la matriz de rotaci髇.
+	Vector3 new_front = R * front; //calculamos el nuevo vector front aplicandole la matriz de rotaci贸n.
 
 	center = eye + new_front; //desplazamos el center.
 
 	updateViewMatrix();
-	// EXERCISE PRACT 1
+	
 }
 
 void Camera::setOrthographic( float left, float right, float bottom, float top, float near_plane, float far_plane )
