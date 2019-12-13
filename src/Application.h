@@ -27,7 +27,7 @@ public:
 	//keyboard state
 	const Uint8* keystate;
 
-	// EXERCISE PRACT 2
+	
 	enum class PoligonMode
 	{
 		POINT = GL_POINTS,
@@ -40,9 +40,7 @@ public:
 
 	std::vector<std::unique_ptr<Mesh>> aseFiles;
 	int aseIndex;
-	// EXERCISE PRACT 2
-
-	// EXERCISE PRACT 3
+	
 	std::vector<std::unique_ptr<Texture>> aseTextures;
 	Shader shader1;
 	Shader shader3;
@@ -53,7 +51,7 @@ public:
 	Shader shader7;
 
 	int shaderId;
-	// EXERCISE PRACT 3
+	
 
 	//mouse state
 	int mouse_state; //tells which buttons are pressed
@@ -69,7 +67,7 @@ public:
 	void render( void );
 	void update( float dt );
 
-	// EXERCISE PRACT 3
+	
 	void renderShader1(const int aseIndex, const Matrix44& transform);
 	void renderShader2( const int aseIndex, const Matrix44& transform );
 	void renderShader3(const int aseIndex, const Matrix44& transform);
@@ -77,7 +75,7 @@ public:
 	void renderShader5(const int aseIndex, const Matrix44& transform);
 	void renderShader6(const int aseIndex, const Matrix44& transform);
 	void renderShader7(const int aseIndex, const Matrix44& transform);
-	// EXERCISE PRACT 3
+	
 
 	void onKeyPressed( SDL_KeyboardEvent event );
 	void onMouseButton( SDL_MouseButtonEvent event );
